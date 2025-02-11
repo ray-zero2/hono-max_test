@@ -1,1 +1,8 @@
-# hono-max_test
+```
+npm install
+npm run dev
+```
+
+```
+open http://localhost:3000
+```
