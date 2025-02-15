@@ -1,13 +1,10 @@
 import { Hono } from 'hono'
 import { renderToString } from 'react-dom/server'
+import clockApi from './server/api/clock.js'
 
 const app = new Hono()
 
-app.get('/api/clock', (c) => {
-  return c.json({
-    time: new Date().toLocaleTimeString()
-  })
-})
+app.route('/api/clock', clockApi);
 
 app.get('*', (c) => {
   return c.html(
@@ -23,7 +20,7 @@ app.get('*', (c) => {
             </>
           ) : (
             <>
-              <script type="module" src="/src/client.tsx"></script>
+              <script type="module" src="/src/client/index.tsx"></script>
             </>
           )}
         </head>

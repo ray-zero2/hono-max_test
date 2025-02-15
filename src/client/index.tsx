@@ -22,7 +22,7 @@ const ClockButton = () => {
   const [response, setResponse] = useState<string | null>(null)
 
   const handleClick = async () => {
-    const response = await fetch('/api/clock')
+    const response = await fetch('/api/clock/current')
     const data = await response.json()
     const headers = Array.from(response.headers.entries()).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
     const fullResponse = {

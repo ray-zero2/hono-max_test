@@ -2,7 +2,8 @@
   "name": "react-hono",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.tsx"
+    "dev": "vite dev",
+    "build": "vite build --mode client && vite build"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.8",
